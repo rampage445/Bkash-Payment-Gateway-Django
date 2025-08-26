@@ -9,6 +9,7 @@ from .models import Transaction
 from django.shortcuts import get_list_or_404
 from django.contrib import messages
 
+# This function here is just to check whether a payment has been done or not
 def query_payment(paymentID,authorization,app_key):
     url = f"https://checkout.sandbox.bka.sh/v1.2.0-beta/checkout/payment/query/{paymentID}"
 
@@ -20,6 +21,7 @@ def query_payment(paymentID,authorization,app_key):
     response = requests.get(url, headers=headers)
     return not(json.loads(response.text)['message'] == "Unauthorized")
 
+# Get token first before you can create a payment
 @login_required
 def get_token(request):
     url = settings.BKASH_TOKEN_URL
@@ -39,6 +41,7 @@ def get_token(request):
     request.session['id_token'] = response['id_token']
     return redirect(reverse('createpayment'))
 
+# Executes the payment
 @transaction.atomic
 def execute_payment(request,paymentid):
     url = settings.BKASH_EXECUTE_PAYMENT_URL
@@ -70,7 +73,7 @@ def callback(request):
         return redirect(reverse('executepayment',kwargs={'paymentid':request.GET.get('paymentID','')})) #redirects to execute payment
     return HttpResponse(status=404)
     
-
+# Creates a payment with 500 BDT
 def create_payment(request):
     payload = {
         "mode": "0011",
