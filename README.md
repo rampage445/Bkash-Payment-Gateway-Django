@@ -1,15 +1,15 @@
-# The execution flow 
+## The execution flow 
 
-get_token() -> create_payment() -> execute_payment() 
+get_token() -> create_payment() -> execute_payment() . Just Call the get_token function. That is it.
 
-# How to use it?
-
-1. Create an app(Ex. Payment)
-2. use the urls.py and views.py
-3. Upon running it will show the tokenized bkash payment ui
+## How to use it?
+1. Get the necessary credentials first(The list is given below)
+2. Create an app inside your Django project(Ex. Payment)
+3. use the urls.py and views.py from this repo
 4. Just call the get_token() function, it will guide you.
+5. You should see the payment ui on your browser.
 
-# Don't Forget
+## Don't Forget
 1. Make sure you save the transaction history(Ex. you may need to refund). So, I have a Transaction table here.
 2. make sure you set these following constants in settings.py. Once you open your merchant account, you will get these credentials.
 
