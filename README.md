@@ -14,7 +14,7 @@ get_token() -> create_payment() -> execute_payment() . Just Call the get_token f
 
 ## How does it work then?
 As you can see the user needs to call Create_payment. It will automatically guide the user. But before you call Create_payment function you need to have a valid token. So, from views.py just call
-the get_token function it will receive the token and automatically call the Create_payment function for you and leave everything to bkash. Their ui will guide the user to complete the payment.
+the get_token function it will receive the token and automatically call the Create_payment function for you. Then just leave everything to bkash. Their ui will guide the user to complete the payment.
 
 ## Don't Forget
 1. Make sure you save the transaction history(Ex. you may need to refund). So, I have a Transaction table here.
