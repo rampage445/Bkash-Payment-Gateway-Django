@@ -9,6 +9,9 @@ get_token() -> create_payment() -> execute_payment() . Just Call the get_token f
 4. Just call the get_token() function, it will guide you.
 5. You should see the payment ui on your browser.
 
+## System Execution Flow
+![Capture](./bkash.png)
+
 ## Don't Forget
 1. Make sure you save the transaction history(Ex. you may need to refund). So, I have a Transaction table here.
 2. make sure you set these following constants in settings.py. Once you open your merchant account, you will get these credentials.
