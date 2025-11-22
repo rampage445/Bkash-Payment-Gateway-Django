@@ -12,7 +12,7 @@ get_token() -> create_payment() -> execute_payment() . Just Call the get_token f
 ## System Execution Flow
 ![Capture](./bkash.png)
 
-## How it works then?
+## How does it work then?
 As you can see the user needs to call Create_payment. It will automatically guide the user. But before you call Create_payment function you need to have a valid token. So, from views.py just call
 the get_token function it will receive the token and automatically call the Create_payment function for you. 
 
